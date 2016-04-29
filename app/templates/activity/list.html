@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block body %}
+
+<a href="{{ url_for('activity_controller.post') }}">post</a><br/><hr/>
+
+    <table border="1">
+    <tr><td>title</td></tr>
+    {% for activity in activites %}
+        <tr><td><a href="{{ url_for('activity_controller.detail', id=activity.id) }}">{{ activity.title }}</a></td><td><a href="{{ url_for('activity_controller.edit', id=activity.id) }}">edit</a></td><td><a href="{{ url_for('activity_controller.delete', id=activity.id) }}">delete</a></td></tr>
+    {% else %}
+        there is not a activity, please insert one first<br/>
+    {% endfor %}
+    </table>
+
+{% endblock %}

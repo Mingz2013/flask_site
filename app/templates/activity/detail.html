@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block body %}
+
+    <ul>
+        <li><a href="{{ url_for('activity_controller.list') }}">list</a></li>
+        <li><a href="{{ url_for('activity_controller.edit', id=activity.id) }}">edit</a></li>
+        <li><a href="{{ url_for('activity_controller.delete', id=activity.id) }}">delete</a></li>
+    </ul>
+    <hr/>
+
+
+    <h1>{{ activity.title }}</h1>
+    <p><b>description: </b>{{ activity.description }}</p>
+
+{% endblock %}
